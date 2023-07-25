@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, shrink-to-fit=no" />
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta charset="utf-8">
+
+    <title>Games by Ioannis Varouchakis</title>
+    <script type="module" src="js/register-components.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <page-title-x>
+        <span slot="title">Games</span>
+        <span slot="subtitle">by Ioannis Varouchakis</span>
+    </page-title-x>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
