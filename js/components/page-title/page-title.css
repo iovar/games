@@ -2,7 +2,6 @@
     --bright-light: #ffe8d0;
     --stroke-light: #ffbb73;
     --ambient-light: #ff9729;
-    --border: #8EBE94;
 
     color: var(--bright-light);
     -webkit-text-stroke: 2px var(--stroke-light);
@@ -10,14 +9,18 @@
     text-align: center;
     container-name: root-container;
     container-type: inline-size;
-
-    max-height: 100%;
-    max-width: 100%;
-    overflow: hidden;
 }
 
 .header {
-    border: 2px inset  var(--border);
+    border-radius: 8px;
+    box-shadow:
+        0 0 16px inset var(--ambient-light),
+        0 0 2px inset var(--stroke-light),
+        0 0 4px inset var(--bright-light),
+        0 0 4px inset var(--bright-light),
+        0 0 4px inset var(--bright-light),
+        0 0 4px inset var(--bright-light),
+        0 0 8px var(--ambient-light);
     box-sizing: border-box;
 }
 
