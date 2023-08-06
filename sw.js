@@ -1,4 +1,4 @@
-const cacheName = 'cache-v1';
+const cacheName = 'cache-v3';
 
 const getCachedFiles = async () => {
     const response = await fetch('./config.json');
@@ -12,6 +12,10 @@ const getCachedFiles = async () => {
         `${config.LIB_DIR}/dynamic-template.js`,
         `${config.LIB_DIR}/remote-template.js`,
         'js/register-components.js',
+        'css/main.css',
+        'img/blipnflap.png',
+        'img/pongnm.png',
+        'img/retroformulaone.png',
         'index.html',
         'sw.js',
     ];

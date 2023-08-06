@@ -1,15 +1,17 @@
-<section class="root">
+<section tabindex=0  class="root">
     <h3 class="title">
         <slot name="title">Title</slot>
     </h3>
     <p class="image">
         <slot name="image">image</slot>
     </p>
-    <p class="description">
-        <slot name="description">Description</slot>
-    </p>
-    <p class="link">
-        Check it out here:
+    <section class="description">
+        <p class="description-text">
+            <slot name="description">Description</slot>
+        </p>
+        <span class="link" aria-role="link" data-callback="click:visitLink">
+            Click here to check it out
+        </span>
         <slot name="link">Link</slot>
-    </p>
+    </section>
 </section>

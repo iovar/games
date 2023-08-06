@@ -1,24 +1,54 @@
 .root {
-    width: 160px;
-    height: 240px;
+    --bright-light: #ffe8d0;
+    --ambient-light: #ff9729;
+    --stroke-light: #ffbb73;
+
+    width: 240px;
+    height: 320px;
+
     overflow: hidden;
+    padding: 4px;
+    position: relative;
 }
 
 .title {
+    color: var(--bright-light);
+    text-shadow: 0 0 4px var(--ambient-light);
+    font-size: xx-large;
 }
 
 .image {
     overflow: hidden;
 }
 
-.image img {
-    max-width: 100%;
+.image ::slotted(img) {
+    width: 100%;
+    height: auto;
 
 }
-.description {
 
+.description {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: fit-content;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.8);
+    transition: bottom 0.2s ease-in;
+}
+
+.root:hover .description,
+.root:focus .description {
+    bottom: 0;
+}
+
+.description-text {
+    color: var(--bright-light);
 }
 
 .link {
-
+    font-size: small;
+    color: var(--stroke-light);
+    text-shadow: 0 0 4px var(--ambient-light);
+    cursor: pointer;
 }
