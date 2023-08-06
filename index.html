@@ -13,30 +13,32 @@
     <style>:not(:defined) { display: none }</style>
 </head>
 <body>
-    <page-title-x>
-        <span slot="title">Games</span>
-        <span slot="subtitle">by Ioannis Varouchakis</span>
-    </page-title-x>
-    <game-card-x data-props="{}">
-        <span slot="title">PongNM (Pong Not iMproved)</span>
-        <span slot="description">A simple Pong type of game, that can be played against another player, or a very simple AI with 3 different styles of play. Originally created in 2013, a few code improvements were made in 2023.</span>
-        <img slot="image" src="img/pongnm.png">
-        <a slot="link" href="https://iovar.github.io/PongNM" target="_blank">(link)</a>
-    </game-card-x>
+    <layout-x>
+        <page-title-x slot="header">
+            <span slot="title">Games</span>
+            <span slot="subtitle">by Ioannis Varouchakis</span>
+        </page-title-x>
+        <game-card-x data-props="{}">
+            <span slot="title">PongNM (Pong Not iMproved)</span>
+            <span slot="description">A simple Pong type of game, that can be played against another player, or a very simple AI with 3 different styles of play. Originally created in 2013, a few code improvements were made in 2023.</span>
+            <img slot="image" src="img/pongnm.png">
+            <a slot="link" href="https://iovar.github.io/PongNM" target="_blank">(link)</a>
+        </game-card-x>
 
-    <game-card-x>
-        <span slot="title">Retro Formula One</span>
-        <span slot="description">A clone of probably the first game console that I  had (and lost decades ago). Recreated using information from the imperfect medium called memory, and a bit of searching on the internet for similar games. Originally created in 2014, a few code improvements were made in 2023.</span>
-        <img slot="image" src="img/retroformulaone.png">
-        <a slot="link" href="https://iovar.github.io/retroformulaone" target="_blank">(link)</a>
-    </game-card-x>
+        <game-card-x>
+            <span slot="title">Retro Formula One</span>
+            <span slot="description">A clone of probably the first game console that I  ever had (and lost decades ago). Recreated using information from the imperfect medium called memory, and a bit of searching on the internet for similar games. Originally created in 2014, a few code improvements were made in 2023.</span>
+            <img slot="image" src="img/retroformulaone.png">
+            <a slot="link" href="https://iovar.github.io/retroformulaone" target="_blank">(link)</a>
+        </game-card-x>
 
-    <game-card-x>
-        <span slot="title">Blip n Flap</span>
-        <span slot="description">Flappy Bird clone, with pac man styled graphics. Originally created in 2014, a few code improvements were made in 2023.</span>
-        <img slot="image" src="img/blipnflap.png">
-        <a slot="link" href="https://iovar.github.io/blipnflap" target="_blank">(link></a>
-    </game-card-x>
+        <game-card-x>
+            <span slot="title">Blip n Flap</span>
+            <span slot="description">Flappy Bird clone, with pac man styled graphics. Originally created in 2014, a few code improvements were made in 2023.</span>
+            <img slot="image" src="img/blipnflap.png">
+            <a slot="link" href="https://iovar.github.io/blipnflap" target="_blank">(link></a>
+        </game-card-x>
+    </layout-x>
 
     <script>
         if ('serviceWorker' in navigator) {

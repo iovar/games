@@ -1,4 +1,4 @@
-const cacheName = 'cache-v3';
+const cacheName = 'cache-v4';
 
 const getCachedFiles = async () => {
     const response = await fetch('./config.json');
