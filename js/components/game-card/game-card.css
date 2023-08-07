@@ -2,18 +2,20 @@
     --bright-light: #ffe8d0;
     --ambient-light: #ff9729;
     --stroke-light: #ffbb73;
+    --spacing-1: 4px;
 
     width: 240px;
     height: 320px;
+    box-sizing: border-box;
 
     overflow: hidden;
-    padding: 4px;
+    padding: var(--spacing-1);
     position: relative;
 }
 
 .title {
     color: var(--bright-light);
-    text-shadow: 0 0 4px var(--ambient-light);
+    text-shadow: 0 0 var(--spacing-1) var(--ambient-light);
     font-size: xx-large;
 }
 
@@ -24,7 +26,6 @@
 .image ::slotted(img) {
     width: 100%;
     height: auto;
-
 }
 
 .description {
@@ -32,14 +33,17 @@
     bottom: -100%;
     width: 100%;
     height: fit-content;
-    padding: 4px;
+    max-height: calc(100% - 2*var(--spacing-1));
+    box-sizing: border-box;
+    overflow: auto;
+    padding: var(--spacing-1) var(--spacing-1) 0 var(--spacing-1);
     background: rgba(0, 0, 0, 0.8);
     transition: bottom 0.2s ease-in;
 }
 
 .root:hover .description,
 .root:focus .description {
-    bottom: 0;
+    bottom: var(--spacing-1);
 }
 
 .description-text {
@@ -47,8 +51,20 @@
 }
 
 .link {
+    bottom: 0;
+    position: sticky;
+    background: black;
+    padding: var(--spacing-1);
+    margin: 0 calc(- var(--spacing-1));
+}
+
+.link-cta {
     font-size: small;
     color: var(--stroke-light);
-    text-shadow: 0 0 4px var(--ambient-light);
+    text-shadow: 0 0 var(--spacing-1) var(--ambient-light);
     cursor: pointer;
+}
+
+.link ::slotted(a) {
+    background: var(--bright-light);
 }

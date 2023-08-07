@@ -9,9 +9,12 @@
         <p class="description-text">
             <slot name="description">Description</slot>
         </p>
-        <span class="link" aria-role="link" data-callback="click:visitLink">
-            Click here to check it out
-        </span>
-        <slot name="link">Link</slot>
+
+        <p class="link">
+            <span class="link-cta" aria-role="link" data-callback="click:visitLink">
+                Click here to check it out
+            </span>
+            <slot name="link">Link</slot>
+        </p>
     </section>
 </section>
