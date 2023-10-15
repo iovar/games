@@ -1,29 +1,21 @@
-const cacheName = 'cache-v4';
+const cacheName = 'cache-v5';
 
-const getCachedFiles = async () => {
-    const response = await fetch('./config.json');
-    const config = await response.json();
-
-    return [
-        './',
-        './config.js',
-        './config.json',
-        `${config.LIB_DIR}/base-component.js`,
-        `${config.LIB_DIR}/dynamic-template.js`,
-        `${config.LIB_DIR}/remote-template.js`,
-        'js/register-components.js',
-        'css/main.css',
-        'img/blipnflap.png',
-        'img/pongnm.png',
-        'img/retroformulaone.png',
-        'index.html',
-        'sw.js',
-    ];
-};
+const cachedFiles = [
+    './',
+    'js/register-components.js',
+    'js/components/game-card.js',
+    'js/components/layout.js',
+    'js/components/page-title.js',
+    'css/main.css',
+    'img/blipnflap.png',
+    'img/pongnm.png',
+    'img/retroformulaone.png',
+    'index.html',
+    'sw.js',
+];
 
 const addFilesToCache = async () => {
     const cache = await caches.open(cacheName);
-    const cachedFiles = await getCachedFiles();
     return cache.addAll(cachedFiles);
 };
 

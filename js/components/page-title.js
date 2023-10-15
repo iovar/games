@@ -1,3 +1,6 @@
+// vi: ft=html
+function getTemplate() { return `
+<style>
 .root {
     --bright-light: #ffe8d0;
     --stroke-light: #ffbb73;
@@ -63,3 +66,28 @@
         margin-right: 20px;
     }
 }
+</style>
+<section class="root">
+    <header class="header">
+        <h1 class="title">
+            <slot name="title">Title</slot>
+        </h1>
+        <h2 class="subtitle">
+            <slot name="subtitle">Subtitle</slot>
+        </h2>
+    </header>
+</section>
+`}
+
+// <script>
+export class PageTitle extends HTMLElement{
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.shadowRoot.innerHTML = getTemplate();
+    }
+}
+// </script>

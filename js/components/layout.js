@@ -1,3 +1,6 @@
+// vi: ft=html
+function getTemplate() { return `
+<style>
 .root {
     position: relative;
     container-name: root-container;
@@ -37,3 +40,24 @@
         row-gap: 20px;
     }
 }
+</style>
+<section class="root">
+    <div class="header">
+        <slot class="header" name="header"></slot>
+    </div>
+    <slot class="children"></slot>
+</section>
+`}
+
+// <script>
+export class Layout extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.shadowRoot.innerHTML = getTemplate();
+    }
+}
+// </script>
