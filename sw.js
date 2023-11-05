@@ -1,4 +1,4 @@
-const cacheName = 'cache-v5';
+const cacheName = 'cache-v6';
 
 const cachedFiles = [
     './',
@@ -9,6 +9,7 @@ const cachedFiles = [
     'css/main.css',
     'img/blipnflap.png',
     'img/pongnm.png',
+    'img/gridscout.png',
     'img/retroformulaone.png',
     'index.html',
     'sw.js',
