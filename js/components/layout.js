@@ -25,6 +25,7 @@ function getTemplate() { return `
     grid-template-areas: "card";
     justify-items: center;
     row-gap: 30px;
+    padding-bottom: 20px;
 }
 
 @container root-container (min-width: 720px) {

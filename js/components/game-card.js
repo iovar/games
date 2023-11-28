@@ -8,7 +8,7 @@ function getTemplate() { return `
         --spacing-1: 4px;
 
         width: 240px;
-        height: 320px;
+        min-height: 320px;
         box-sizing: border-box;
 
         overflow: hidden;
