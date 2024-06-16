@@ -1,4 +1,4 @@
-const cacheName = 'cache-v7';
+const cacheName = 'cache-v8';
 
 const cachedFiles = [
     './',
@@ -8,9 +8,11 @@ const cachedFiles = [
     'js/components/page-title.js',
     'css/main.css',
     'img/blipnflap.png',
-    'img/pongnm.png',
     'img/gridscout.png',
+    'img/pongnm.png',
     'img/retroformulaone.png',
+    'img/snake.png',
+    'img/testbricks.png',
     'index.html',
     'sw.js',
 ];
