@@ -8,7 +8,7 @@
     <meta charset="utf-8">
 
     <title>Games by Ioannis Varouchakis</title>
-    <script type="module" src="js/register-components.js"></script>
+    <script type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <style>:not(:defined) { display: none }</style>
 </head>
@@ -18,7 +18,7 @@
             <span slot="title">Games</span>
             <span slot="subtitle">by Ioannis Varouchakis</span>
         </page-title-x>
-        <game-card-x data-props="{}">
+        <game-card-x>
             <span slot="title">PongNM (Pong Not iMproved)</span>
             <span slot="description">A simple Pong type of game, that can be played against another player, or a very simple AI with 3 different styles of play. Originally created in 2013, a few code improvements were made in 2023.</span>
             <img slot="image" alt="a screenshot of a pong styled game" src="img/pongnm.png">
@@ -66,5 +66,33 @@
             navigator.serviceWorker.register('sw.js');
         }
     </script>
+    <template id="global-styles">
+        <style>
+            :not(:defined) { display: none }
+
+            :root, :host, body {
+                --spacing-1: 4px;
+
+                --fg-col: #dcf29d;
+                --bg-col: #1b1233;
+
+                --col-a: #ec3132;
+                --col-b: #30c8f1;
+                --col-c: #b543ee;
+                --col-d: #fbf152;
+
+                background: var(--col-b);
+                color: var(--col-d);
+                font-family: monospace;
+
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            * { box-sizing: border-box; }
+        </style>
+    </template>
 </body>
 </html>

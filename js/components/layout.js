@@ -1,56 +1,59 @@
 // vi: ft=html
-function getTemplate() { return `
-<style>
-.root {
-    position: relative;
-    container-name: root-container;
-    container-type: inline-size;
-}
-
-.header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    background:  black;
-}
-
-.header ::slotted(page-title-x) {
-    margin-bottom: 8px;
-    display: block;
-}
-
-.children {
-    display: grid;
-    grid-template-areas: "card";
-    justify-items: center;
-    row-gap: 30px;
-    padding-bottom: 20px;
-}
-
-@container root-container (min-width: 720px) {
-    .children {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 20px;
+// <style>
+const getStyles = () => (`
+    .root {
+        position: relative;
+        container-name: root-container;
+        container-type: inline-size;
     }
-}
 
-@container root-container (min-width: 1280px) {
-    .children {
-        grid-template-columns: 1fr 1fr 1fr;
-        row-gap: 20px;
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background:  black;
     }
-}
-</style>
-<section class="root">
-    <div class="header">
-        <slot class="header" name="header"></slot>
-    </div>
-    <slot class="children"></slot>
-</section>
-`}
+
+    .header ::slotted(page-title-x) {
+        display: block;
+    }
+
+    .children {
+        display: grid;
+        grid-template-areas: "card";
+        justify-items: center;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    @container root-container (min-width: 720px) {
+        .children {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @container root-container (min-width: 1280px) {
+        .children {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+`);
+// </style>
+
+const getTemplate = () => (`
+    <section class="root">
+        <div class="header">
+            <slot class="header" name="header"></slot>
+        </div>
+        <slot class="children"></slot>
+    </section>
+`);
 
 // <script>
+const styleSheet = new CSSStyleSheet();
+styleSheet.replaceSync(getStyles());
+
 export class Layout extends HTMLElement {
     constructor() {
         super();
@@ -58,6 +61,7 @@ export class Layout extends HTMLElement {
     }
 
     connectedCallback() {
+        this.shadowRoot.adoptedStyleSheets = [...document.adoptedStyleSheets, styleSheet ];
         this.shadowRoot.innerHTML = getTemplate();
     }
 }
