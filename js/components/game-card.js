@@ -68,7 +68,7 @@ const getStyles = () => (`
     }
 
     .link-cta {
-        color: var(--col-c);
+        color: var(--col-d);
         cursor: pointer;
         background: var(--col-b);
         border: 2px solid var(--col-d);
@@ -77,7 +77,7 @@ const getStyles = () => (`
     }
 
     .link ::slotted(a) {
-        background: var(--col-a);
+        background: var(--col-e);
         position: absolute;
         right: 0;
         bottom: 0;
