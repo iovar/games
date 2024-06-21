@@ -4,19 +4,21 @@
 const getStyles = () => (`
     :host {
         display: block;
-        border: 4px solid var(--col-d);
     }
+
     .root {
         width: 100%;
         min-height: 320px;
 
+        border: 2px solid var(--col-d);
+        border-top: 0;
         overflow: hidden;
         position: relative;
     }
 
     .title {
         font-size: 24px;
-        border-bottom: 4px solid var(--col-d);
+        border-bottom: 2px solid var(--col-d);
         text-align: center;
         color: var(--col-d);
         background-color: var(--col-a);
@@ -40,11 +42,11 @@ const getStyles = () => (`
         bottom: -100%;
         width: 100%;
         height: fit-content;
-        max-height: calc(100% - 2*var(--spacing-1));
+        max-height: calc(100% - 8px);
         overflow: auto;
         background: var(--col-c);
         transition: bottom 0.2s ease-in;
-        border: 4px solid var(--col-d);
+        border: 2px solid var(--col-d);
     }
 
     .root:hover .description,
@@ -60,22 +62,22 @@ const getStyles = () => (`
         bottom: 0;
         position: sticky;
         padding: 16px;
-        margin: 0 calc(- var(--spacing-1));
+        margin: 0;
         text-align: center;
         background: var(--col-c);
     }
 
     .link-cta {
-        color: var(--col-d);
+        color: var(--col-c);
         cursor: pointer;
-        background: var(--col-a);
+        background: var(--col-b);
         border: 2px solid var(--col-d);
         line-height: 2rem;
         padding: 16px;
     }
 
     .link ::slotted(a) {
-        background: var(--col-d);
+        background: var(--col-a);
         position: absolute;
         right: 0;
         bottom: 0;

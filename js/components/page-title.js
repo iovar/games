@@ -5,6 +5,7 @@ const getStyles = () => (`
         text-align: center;
         container-name: root-container;
         container-type: inline-size;
+        border: 2px solid var(--col-d);
 
         &, &::slotted(*) {
             color: var(--col-d);
